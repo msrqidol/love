@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のおみくじ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .luck {
+            font-size: 2em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .feedback {
+            font-size: 1.5em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>今日のおみくじ</h1>
+        <button id="fortuneButton" onclick="getRandomLuckAndFeedback();">
+            おみくじを引いてみる
+        </button>
+        <p class="luck" id="luck"></p>
+        <p class="feedback" id="feedback"></p>
+    </div>
+
+    <script>
+        const luckOptions = ['大吉', '中吉', '吉', '小吉', '末吉'];
+        const feedbackMessages = [
+            "今日はゆっくり、自分を甘やかしてもいいよ。",
+            "無理しなくて大丈夫。あんなは十分頑張ってる。",
+            "小さな一歩も、立派な前進！",
+            "あんなの存在そのものが素晴らしいんだよ。",
+            "一休みしたって、何も悪くないよ。",
+            "つらい時は、深呼吸してみよう。",
+            "あんなの笑顔が、誰かの支えになっているよ。",
+            "焦らず、自分のペースで進もう。",
+            "きっと明日は、今日より良い日になる。",
+            "自分を信じてみて。あんなならできる！",
+            "これまで乗り越えたこと、忘れずにいてね。",
+            "一緒にがんばろう！",
+            "休むことは恥ずかしいことじゃないよ。",
+            "一緒だよ！だから大丈夫。",
+            "笑顔は、自分にも相手にも魔法をかけるよ。",
+            "どんな気持ちも、あんなの大切な一部。",
+            "あんながいてくれて嬉しい！",
+            "できない日はあって当然。気にしないでね。",
+            "小さな幸せ、ちゃんと見つけてあげてね。",
+            "ちゃんと頑張ってる自分を、たくさん褒めてあげよう。",
+            "今がうまくいかなくても、大丈夫。",
+            "いつも味方だよ。",
+            "あんなはあんなだけの素敵な人生を歩んでる。",
+            "今日もよく生き抜いたね、お疲れ様！",
+            "心が疲れたら、心の栄養をあげよう。",
+            "一人じゃないよ、ちゃんと味方がいるよ。",
+            "たまには空を見上げて、リラックスしてね。",
+            "あんなのペースでいいんだよ。",
+            "眠れない夜も、やがて朝が来るよ。",
+            "どんなあんなも、大切にしてあげよう."
+        ];
+
+        function getRandomLuckAndFeedback() {
+            const luckIndex = Math.floor(Math.random() * luckOptions.length);
+            const luck = luckOptions[luckIndex];
+            const feedback = feedbackMessages[luckIndex];
+
+            document.getElementById("luck").innerText = `あなたの運勢: ${luck}`;
+            document.getElementById("feedback").innerText = feedback;
+        }
+    </script>
+</body>
+
+</html>
